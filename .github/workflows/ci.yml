@@ -74,6 +74,9 @@ jobs:
       - run: sudo xcode-select -switch /Applications/Xcode_15.3.app
         if: startsWith(matrix.os, 'macOS')
 
+      - name: Tauri info
+        run: pnpm run tauri info
+
       - name: Build package
         run: pnpm run tauri build ${{ matrix.tauri-build-flags }}
 
